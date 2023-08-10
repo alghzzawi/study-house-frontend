@@ -9,7 +9,7 @@ export default function Hero() {
                         <div>
                             <h2 className="text-4xl font-bold">Study. Work. Learn. Business.</h2>
                             <p className="mt-4">
-                                Join us on this transformative journey, where you'll meet like-minded individuals, expand your network, and unlock your full potential. We're excited to be part of your learning and business growth, and we look forward to helping you achieve your goals.
+                                Join us on this transformative journey, where you will meet like-minded individuals, expand your network, and unlock your full potential. We are excited to be part of your learning and business growth, and we look forward to helping you achieve your goals.
                             </p>
                         </div>
                         <div className="md:justify-self-end ">

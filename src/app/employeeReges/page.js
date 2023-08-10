@@ -6,11 +6,10 @@ import logo from 'public/assets/employee_logo.png'
 import Swal from 'sweetalert2';
 import Image from 'next/image';
 import Link from 'next/link';
-import Main from '../components/Main';
 
 import { AuthContext } from "../countexts/auth";
 
-export default function employeeReges() {
+export default function EmployeeReges() {
     const { tokens_access } = useContext(AuthContext);
 
 

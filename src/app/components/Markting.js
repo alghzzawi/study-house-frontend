@@ -19,7 +19,7 @@ export default function Markting() {
                             Online reservations for study spaces are made on a first-come, first-served basis. Reservations can be made last-minute, in-the-moment, or in advance for the quarter.
                         </p>
                         <p className="mt-4 text-lg md:text-xl">
-                            You will be expected to adhere to the guidelines for using the Centre's classrooms.
+                            You will be expected to adhere to the guidelines for using the Centre`s classrooms.
                         </p>
                     </div>
                 </div>

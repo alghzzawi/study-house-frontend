@@ -34,7 +34,7 @@ export default function Steps() {
                             <div>
                                 <h3 className="font-bold mt-4">2. Upgrade it and customise it.</h3>
                                 <p className="my-3">
-                                    Leave the details to us, and upgrade and customise yourspace to meet your team's exact needs.
+                                    Leave the details to us, and upgrade and customise yourspace to meet your team`s exact needs.
                                 </p>
                             </div>
                             <div className="h-[150px] md:h-[200px]">

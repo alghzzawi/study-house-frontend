@@ -97,7 +97,7 @@ export default function LoginForm() {
             </form>
 
             <p className="mt-10 text-center text-sm text-gray-500 sm:w-auto sm:flex-none">
-              New Customer OR don't have online account access?{' '}
+              New Customer OR dont have online account access?{' '}
               <Link
                 key=''
                 href='/signup'

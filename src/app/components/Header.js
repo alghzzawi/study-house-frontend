@@ -94,13 +94,13 @@ export default function Header() {
 
 
   return (
-    <header className="bg-[#e8e8e8] text-[#0D0D0D] text-base font-semibold py-4 px-8 items-center">
+    <header className="bg-[#e8e8e8] text-[#0D0D0D] text-base font-semibold py-4 px-8 md:px-16 lg:px-32 items-center">
       {is_staffBoolean ? (
-        <section className="flex justify-between">
+        <section className="flex flex-col md:flex-row justify-between items-center">
           <div className="w-72">
             <Image src={employeeLogo} alt="logo" />
           </div>
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-4 mt-4 md:mt-0">
             {navAdmin.map((item) => (
               <Link
                 className="hover:rounded-e-md hover:border-b hover:border-[#404040] transition-all duration-300 ease-in-out"
@@ -133,11 +133,11 @@ export default function Header() {
         </section>
 
       ) : is_employeeBoolean ? (
-        <section className="flex justify-between">
+        <section className="flex flex-col md:flex-row justify-between items-center">
           <div className="w-72">
             <Image src={employeeLogo} alt="logo" />
           </div>
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-4 mt-4 md:mt-0">
             {navReservationsEmployee.map((item) => (
               <Link
                 className="hover:rounded-e-md hover:border-b hover:border-[#404040] transition-all duration-300 ease-in-out"
@@ -169,11 +169,11 @@ export default function Header() {
           </div>
         </section>
       ) : (
-        <section className="flex justify-between">
+        <section className="flex flex-col md:flex-row justify-between items-center">
           <div className="w-72">
             <Image src={logo} alt="logo" />
           </div>
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-4 mt-4 md:mt-0">
             {navigation.map((item) => (
               <Link
                 className="hover:rounded-e-md hover:border-b hover:border-[#404040] transition-all duration-300 ease-in-out"

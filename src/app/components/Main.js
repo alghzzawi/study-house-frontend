@@ -33,7 +33,7 @@ export default function Main() {
             <CTA/>
 
             {/* Contact */}
-            {tokens_access ? (<Contact/>) : (<></>)}
+            <Contact/>
             
             
             {/* Footer */}

@@ -9,9 +9,8 @@ export default function Footer() {
     return (
 
         <footer className="p-4 sm:p-6 bg-[#BFBFBF] text-[#0D0D0D]">
-            <div className="md:flex md:justify-between ">
-
-                <div className="border-[#e5f2c4]  w-1/2 grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3 pt-3">
+            <div className="md:flex md:justify-between">
+                <div className="border-[#e5f2c4] w-full md:w-1/2 grid grid-cols-1 md:grid-cols-3 pt-3 md:pt-0 gap-8 sm:gap-6">
                     <div className="">
                         <h3 className="mb-4 text-2xl text-right font-semibold "> About </h3>
                         <ul>
@@ -75,15 +74,14 @@ export default function Footer() {
                         </ul>
                     </div>
                 </div>
-                <div className=" mb-6 md:mb-0">
+                <div className="mb-6 md:mb-0 flex justify-center items-center">
                     <a href="/" target="_blank" className="border-black flex items-center">
-                        <Image src={logo} className="w-72 mr-4 pt-16" alt="FlowBite Logo" />
+                        <Image src={logo} className="w-48 sm:w-72 mr-4 pt-16" alt="FlowBite Logo" />
                     </a>
                 </div>
             </div>
             <br className="my-6 sm:mx-auto lg:my-8" />
             <div className="sm:flex sm:items-center sm:justify-between">
-
                 <div className="ml-8 flex mt-4 space-x-6 sm:justify-center sm:mt-0">
                     <a href="#" className=" hover:text-[#e5f2c4]">
                         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -121,7 +119,8 @@ export default function Footer() {
                         </svg>
                     </a>
                 </div>
-                <span className="text-sm  mr-8 sm:text-center text-[#F2F2F2]">© 2023 <a href="https://flowbite.com" target="_blank" className="hover:underline">Learning & Business Center™</a>. All Rights Reserved.
+                <span className="text-sm mr-8 sm:text-center text-[#F2F2F2]">
+                    © 2023 <a href="https://flowbite.com" target="_blank" className="hover:underline">Learning & Business Center™</a>. All Rights Reserved.
                 </span>
             </div>
         </footer>

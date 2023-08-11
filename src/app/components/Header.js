@@ -94,7 +94,7 @@ export default function Header() {
 
 
   return (
-    <header className="bg-[#e8e8e8] text-[#0D0D0D] text-base font-semibold py-4 px-8 md:px-16 lg:px-32 items-center">
+    <header className="bg-[#e8e8e8] text-[#0D0D0D] text-base font-semibold py-4 px-2 md:px-4 lg:px-8 items-center">
       {is_staffBoolean ? (
         <section className="flex flex-col md:flex-row justify-between items-center">
           <div className="w-72">

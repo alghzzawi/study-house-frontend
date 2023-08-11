@@ -7,7 +7,7 @@ import Footer from '../components/Footer'
 
 import axios from 'axios';
 
-export default function Profile() {
+export default function Reservations() {
 
   const { refresh, tokens_refresh, tokens_access, is_employee, username } = useContext(AuthContext)
 
@@ -152,8 +152,55 @@ export default function Profile() {
   };
 
   const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    return date.toLocaleString();
+
+    const hasTimePortion = dateString.includes("Z");
+    if (hasTimePortion) {
+      const options = {
+        year: 'numeric',
+        month: 'numeric',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric',
+        hour12: true,
+        timeZone: 'UTC'
+      };
+
+      const hasTime = dateString.includes("T");
+
+      const date = new Date(dateString);
+      const formattedDate = date.toLocaleString('en-US', options);
+
+      const amPm = formattedDate.slice(-2);
+      const formattedTime = formattedDate.slice(0, -6);
+      return hasTime ? `${formattedTime} ${amPm}` : `${formattedTime}`;
+    
+    } else {
+    
+      const date = new Date(dateString);
+
+      // Extract date and time components
+      const year = date.getFullYear();
+      const month = (date.getMonth() + 1).toString().padStart(2, '0');
+      const day = date.getDate().toString().padStart(2, '0');
+
+      let hours = date.getHours();
+      const minutes = date.getMinutes().toString().padStart(2, '0');
+
+      // Convert hours to 12-hour format and append AM/PM
+      let amPm = 'AM';
+      if (hours >= 12) {
+        amPm = 'PM';
+        if (hours > 12) {
+          hours -= 12;
+        }
+      }
+
+      // Format the result
+      const formattedDatetime = `${month}/${day}/${year}, ${hours}:${minutes} ${amPm}`;
+
+      return formattedDatetime;
+    }
   };
 
 
@@ -227,11 +274,11 @@ export default function Profile() {
   }
 
   function startdatetimeHandler(e) {
-    setStartdatetime(e.target.value)
+    setStartdatetime(e.target.value);
   }
 
   function enddatetimeHandler(e) {
-    setEnddatetime(e.target.value)
+    setEnddatetime(e.target.value);
   }
 
   return (

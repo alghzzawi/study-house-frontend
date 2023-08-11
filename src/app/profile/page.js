@@ -148,8 +148,52 @@ export default function Profile() {
   };
 
   const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    return date.toLocaleString();
+
+    const hasTimePortion = dateString.includes("Z");
+    if (hasTimePortion) {
+      const options = {
+        year: 'numeric',
+        month: 'numeric',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric',
+        hour12: true,
+        timeZone: 'UTC'
+      };
+
+      const hasTime = dateString.includes("T");
+
+      const date = new Date(dateString);
+      const formattedDate = date.toLocaleString('en-US', options);
+
+      const amPm = formattedDate.slice(-2);
+      const formattedTime = formattedDate.slice(0, -6);
+      return hasTime ? `${formattedTime} ${amPm}` : `${formattedTime}`;
+    
+    } else {
+    
+      const date = new Date(dateString);
+
+      const year = date.getFullYear();
+      const month = (date.getMonth() + 1).toString().padStart(2, '0');
+      const day = date.getDate().toString().padStart(2, '0');
+
+      let hours = date.getHours();
+      const minutes = date.getMinutes().toString().padStart(2, '0');
+
+      let amPm = 'AM';
+      if (hours >= 12) {
+        amPm = 'PM';
+        if (hours > 12) {
+          hours -= 12;
+        }
+      }
+
+      const formattedDatetime = `${month}/${day}/${year}, ${hours}:${minutes} ${amPm}`;
+
+      return formattedDatetime;
+    }
   };
 
   const handleDeleteClick = (id) => {
